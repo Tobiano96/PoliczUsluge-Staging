@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'unsafe-inline'; connect-src https://deecwhxxlyswhwtswkyy.supabase.co; base-uri 'none'; object-src 'none'; form-action 'none'">
+  <title>Oferta — PoliczUsługę</title>
+  <style>
+    :root{color-scheme:dark;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:#07182f;color:#edf6ff}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 85% 0,#18406c,transparent 60%),#07182f}
+    main{width:min(720px,100% - 28px);margin:40px auto;padding:24px;border:1px solid #8acaff55;border-radius:22px;background:#102b4b;box-shadow:0 18px 55px #0008}
+    header{display:flex;align-items:center;gap:12px;border-bottom:1px solid #8acaff44;padding-bottom:16px;margin-bottom:22px}
+    .mark{display:grid;place-items:center;width:44px;height:44px;border-radius:15px;background:#2589c7;font-size:25px}
+    h1{font-size:clamp(24px,5vw,34px);line-height:1.2;margin:0}h2{font-size:19px;margin:0 0 12px}
+    p{line-height:1.6;color:#cedff0}.scope{white-space:pre-wrap;overflow-wrap:anywhere;border:1px solid #7eb4e844;background:#0a2340;border-radius:14px;padding:16px;color:#edf6ff}
+    .total{font-size:clamp(25px,6vw,38px);font-weight:850;color:#9de2ff;margin:18px 0}.meta{font-size:13px;color:#bcd3e8}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.actions button{flex:1 1 200px}
+    button{min-height:50px;border:0;border-radius:12px;padding:12px 16px;font:inherit;font-weight:800;cursor:pointer}
+    button:focus-visible{outline:3px solid #a8eaff;outline-offset:3px}
+    #accept{background:#82dcbb;color:#082a2a}#decline{background:#284a6c;border:1px solid #91c6ef66;color:#fff}
+    button:disabled{opacity:.65;cursor:wait}.status{min-height:24px;margin-top:18px;color:#b7def8}
+    .hidden{display:none!important}
+    @media(max-width:480px){main{margin:14px auto;padding:18px;border-radius:17px}.actions{flex-direction:column}}
+  </style>
+</head>
+<body>
+  <main>
+    <header><div class="mark" aria-hidden="true">✓</div><div><h1>Oferta od PoliczUsługę</h1><div class="meta">Bezpieczny podgląd decyzji klienta</div></div></header>
+    <section id="offer" class="hidden" aria-live="polite">
+      <h2 id="title"></h2>
+      <div id="scope" class="scope"></div>
+      <h3>Do zapłaty brutto</h3>
+      <div id="total" class="total"></div>
+      <p id="expires" class="meta"></p>
+      <div id="decision" class="meta"></div>
+      <div id="actions" class="actions">
+        <button id="accept" type="button">Akceptuję ofertę</button>
+        <button id="decline" type="button">Odrzucam ofertę</button>
+      </div>
+    </section>
+    <p id="status" class="status" role="status" aria-live="polite">Sprawdzam dostępność oferty…</p>
+    <p class="meta">Oferta ma charakter informacyjny. W razie pytań skontaktuj się z wykonawcą, który ją wysłał.</p>
+  </main>
+  <script src="./client.js" defer></script>
+</body>
+</html>
